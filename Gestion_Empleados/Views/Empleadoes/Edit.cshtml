@@ -1,87 +1,112 @@
 ﻿@model Gestion_Empleados.Models.Empleado
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Empleado";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center text-white">Editar Empleado</h1>
 
-<h4>Empleado</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="EmpleadoId" />
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+<div class="container bloque mx-auto">
+    <h4 class="text-center text-primary">Empleado</h4>
+    <hr />
+    <form asp-action="Edit" class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <input type="hidden" asp-for="EmpleadoId" />
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Nombre" class="col-sm-4 col-form-label text-warning text-right">Nombre</label>
+            <div class="col-sm-7">
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Apellidos" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Apellidos" class="col-sm-4 col-form-label text-warning text-right">Apellidos</label>
+            <div class="col-sm-7">
                 <input asp-for="Apellidos" class="form-control" />
                 <span asp-validation-for="Apellidos" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Direccion" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Direccion" class="col-sm-4 col-form-label text-warning text-right">Dirección</label>
+            <div class="col-sm-7">
                 <input asp-for="Direccion" class="form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Telefono" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Telefono" class="col-sm-4 col-form-label text-warning text-right">Teléfono</label>
+            <div class="col-sm-7">
                 <input asp-for="Telefono" class="form-control" />
                 <span asp-validation-for="Telefono" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Correo" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Correo" class="col-sm-4 col-form-label text-warning text-right">Correo</label>
+            <div class="col-sm-7">
                 <input asp-for="Correo" class="form-control" />
                 <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FechaNacimiento" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="FechaNacimiento" class="col-sm-4 col-form-label text-warning text-right">Fecha de Nacimiento</label>
+            <div class="col-sm-7">
                 <input asp-for="FechaNacimiento" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Puesto" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Puesto" class="col-sm-4 col-form-label text-warning text-right">Puesto</label>
+            <div class="col-sm-7">
                 <input asp-for="Puesto" class="form-control" />
                 <span asp-validation-for="Puesto" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="FechaContratacion" class="control-label"></label>
+        </div>
+
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="FechaContratacion" class="col-sm-4 col-form-label text-warning text-right">Fecha de Contratación</label>
+            <div class="col-sm-7">
                 <input asp-for="FechaContratacion" class="form-control" />
                 <span asp-validation-for="FechaContratacion" class="text-danger"></span>
             </div>
-            <div class="form-group row justify-content-center">
-                <label asp-for="Rol" class="col-sm-4 col-form-label text-warning text-right">Rol</label>
-                <div class="col-sm-7">
-                    <select asp-for="Rol" class="form-control">
-                        <option value="0">Usuario</option>
-                        <option value="1">Administrador</option>
-                    </select>
-                    <span asp-validation-for="Rol" class="text-danger"></span>
-                </div>
-            </div>
+        </div>
 
-            <div class="form-group row justify-content-center">
-                <label asp-for="JornadaId" class="col-sm-4 col-form-label text-warning text-right">Jornada</label>
-                <div class="col-sm-7">
-                    <select asp-for="JornadaId" class="form-control" asp-items="ViewBag.JornadaId"></select>
-                    <span asp-validation-for="JornadaId" class="text-danger"></span>
-                </div>
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="Rol" class="col-sm-4 col-form-label text-warning text-right">Rol</label>
+            <div class="col-sm-7">
+                <select asp-for="Rol" class="form-control">
+                    <option value="0">Usuario</option>
+                    <option value="1">Administrador</option>
+                </select>
+                <span asp-validation-for="Rol" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div class="form-group row justify-content-center mb-3">
+            <label asp-for="JornadaId" class="col-sm-4 col-form-label text-warning text-right">Jornada</label>
+            <div class="col-sm-7">
+                <select asp-for="JornadaId" class="form-control" asp-items="ViewBag.JornadaId"></select>
+                <span asp-validation-for="JornadaId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-12 text-center">
+                <input type="submit" value="Guardar" class="btn btn-primary mx-2" />
+                <a asp-action="Index" class="btn btn-secondary mx-2">Cancelar</a>
+            </div>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
