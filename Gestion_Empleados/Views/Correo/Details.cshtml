@@ -4,9 +4,10 @@
     ViewData["Title"] = "Detalles del Correo";
 }
 
-<h1 class="text-center text-primary fw-bold">Detalles del Correo</h1>
 
 <div class="container bloque mx-auto">
+    <h1 class="text-center text-success fw-bold">Detalles del Correo</h1>
+
     <dl class="row">
         <dt class="col-sm-4 text-warning text-right">
             @Html.DisplayNameFor(model => model.Remitente)
@@ -45,7 +46,7 @@
     </dl>
 
     <div class="text-center mt-4">
-        <a asp-action="Edit" asp-route-id="@Model?.CorreoId" class="btn btn-primary mx-2">Editar</a>
+        <a asp-action="Edit" asp-route-id="@Model?.CorreoId" class="btn btn-success mx-2">Editar</a>
         <a asp-action="Index" class="btn btn-secondary mx-2">Volver a la Lista</a>
     </div>
 </div>

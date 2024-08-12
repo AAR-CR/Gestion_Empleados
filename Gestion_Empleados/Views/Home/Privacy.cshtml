@@ -1,6 +1,17 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Access Denied";
 }
-<h1>@ViewData["Title"]</h1>
-
-<p>Use this page to detail your site's privacy policy.</p>
+<div class="container bloque mx-auto text-center">
+    <h1 class="text-primary">Acceso Denegado</h1>
+    <hr />
+    <p class="text-white">
+        No tienes permisos para acceder a esta página o tienes un password incorrecto.
+    </p>
+    <p class="text-white">
+        Ponte en contacto con el departamento de IT.
+    </p>
+    <div class="mt-4">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-primary">Volver al Inicio</a>
+        <a asp-area="" asp-controller="Account" asp-action="Login" class="btn btn-secondary">Iniciar Sesión</a>
+    </div>
+</div>

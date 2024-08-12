@@ -77,25 +77,30 @@
                         </li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item bloque">
-                                <span class="nav-link text-primary"> @User.Identity.Name</span>
+                            <li class="nav-item ">
+                                <span class="nav-link text-white fw-bold bg-primary"> @User.Identity.Name</span>
                             </li>
-
+                            <hr />
                             <li class="nav-item">
-                                <a class="nav-link text-black " asp-area="" asp-controller="Mensaje" asp-action="Create">Mensaje General</a>
+                                <a class="nav-link text-black" asp-area="" asp-controller="Mensaje" asp-action="Create">Mensaje General</a>
                             </li>
+                            <hr/>
                             <li class="nav-item">
-                                <a class="nav-link text-black" asp-area="" asp-controller="Correo" asp-action="Create">Enviar Correo</a>
+                                <a class="nav-link text-black" asp-area="" asp-controller="Correo" asp-action="Create">Correo Interno</a>
                             </li>
+                            <hr />
                             <li class="nav-item">
                                 <a class="nav-link text-black " asp-area="" asp-controller="Correo" asp-action="Index">Recibidos</a>
                             </li>
+                            <hr />
                             <li class="nav-item">
-                                <a class="nav-link text-black" asp-area="" asp-controller="EvaluacionDesempenoes" asp-action="Create">Evaluar</a>
+                                <a class="nav-link text-black" asp-area="" asp-controller="EvaluacionDesempenoes" asp-action="Create">Evaluar Persona</a>
                             </li>
+                            <hr />
                             <li class="nav-item">
                                 <a class="nav-link text-black" asp-area="" asp-controller="EvaluacionDesempenoes" asp-action="Index">Evaluaciones</a>
                             </li>
+                            <hr />
                         }
                     </ul>
                 </div>

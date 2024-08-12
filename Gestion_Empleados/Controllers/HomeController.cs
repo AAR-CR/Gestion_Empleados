@@ -99,7 +99,7 @@ namespace Gestion_Empleados.Controllers
 
             }
 
-                return RedirectToAction("Error", "Home");
+                return RedirectToAction("Privacy", "Home");
 
         }
 

@@ -4,9 +4,10 @@
     ViewData["Title"] = "Editar Correo";
 }
 
-<h1 class="text-center text-primary fw-bold">Editar Correo</h1>
 
 <div class="container bloque mx-auto">
+    <h1 class="text-center text-success fw-bold">Editar Correo</h1>
+
     <form asp-action="Edit" class="form-horizontal">
         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
         <input type="hidden" asp-for="CorreoId" />
@@ -53,7 +54,7 @@
 
         <div class="form-group row">
             <div class="col-sm-12 text-center">
-                <input type="submit" value="Guardar" class="btn btn-primary mx-2" />
+                <input type="submit" value="Guardar" class="btn btn-success mx-2" />
                 <a asp-action="Index" class="btn btn-secondary mx-2">Cancelar</a>
             </div>
         </div>

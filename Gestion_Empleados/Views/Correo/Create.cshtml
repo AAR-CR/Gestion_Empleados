@@ -4,11 +4,12 @@
     ViewData["Title"] = "Crear Correo";
 }
 
-<h1 class="text-center text-primary fw-bold">Crear Correo</h1>
 
 <div class="container bloque mx-auto">
     <form asp-action="Create" class="form-horizontal">
         <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <h1 class="text-center text-success fw-bold">Crear Correo</h1>
+
 
         <div class="form-group row justify-content-center mb-3">
             <label asp-for="RemitenteId" class="col-sm-4 col-form-label text-warning text-right">Remitente</label>
@@ -60,7 +61,7 @@
 </div>
 
 <div class="text-center mt-3">
-    <a asp-action="Index" class="btn btn-warning">Volver a la Lista</a>
+    <a asp-action="Index" class="btn btn-success">Volver a la Lista</a>
 </div>
 
 @section Scripts {

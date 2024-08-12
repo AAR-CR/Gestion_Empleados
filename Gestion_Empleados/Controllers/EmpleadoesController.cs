@@ -58,6 +58,13 @@ namespace Gestion_Empleados.Controllers
             var jornada = await _context.Jornadas.FindAsync(empleado.JornadaId);
             empleado.Jornada = jornada;
 
+            bool correoExiste = await _context.Empleados.AnyAsync(e => e.Correo == empleado.Correo);
+
+            if (correoExiste)
+            {
+                ModelState.AddModelError("Correo", "El correo electrónico ya está registrado.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(empleado);
