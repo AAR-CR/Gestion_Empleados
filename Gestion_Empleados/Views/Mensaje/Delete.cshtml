@@ -1,0 +1,46 @@
+﻿@model Gestion_Empleados.Models.Mensaje
+
+@{
+    ViewData["Title"] = "Eliminar Mensaje";
+}
+
+<h1 class="text-center text-white">Eliminar Mensaje</h1>
+
+<h3 class="text-center text-warning">¿Estás seguro de que deseas eliminar este mensaje?</h3>
+
+<div class="container bloque mx-auto">
+    <h4 class="text-center text-primary">Detalles del Mensaje</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4 text-right text-warning">
+            @Html.DisplayNameFor(model => model.Remitente)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Remitente.Apellidos)
+        </dd>
+        <dt class="col-sm-4 text-right text-warning">
+            @Html.DisplayNameFor(model => model.Asunto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Asunto)
+        </dd>
+        <dt class="col-sm-4 text-right text-warning">
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+        <dt class="col-sm-4 text-right text-warning">
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="text-center">
+        <input type="hidden" asp-for="MensajeId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger mx-2" />
+        <a asp-action="Index" class="btn btn-secondary mx-2">Cancelar</a>
+    </form>
+</div>

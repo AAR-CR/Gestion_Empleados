@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IEnumerable<Gestion_Empleados.Models.Mensaje>
+
+<h1 class="bloque text-primary">Mensajes Generales</h1>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 mb-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body d-flex">
+                        <div class="flex-grow-1">
+                            <h5 class="card-title">
+                                Remitente: @Html.DisplayFor(modelItem => item.Remitente.Apellidos)
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                Asunto: @Html.DisplayFor(modelItem => item.Asunto)
+                            </h6>
+                            <p class="card-text">
+                                Mensaje: @Html.DisplayFor(modelItem => item.Texto)
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    Fecha: @Html.DisplayFor(modelItem => item.Fecha)
+                                </small>
+                            </p>
+                        </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="d-flex flex-column justify-content-around">
+                            <a asp-action="Edit" asp-controller="Mensaje" asp-route-id="@item.MensajeId" class="btn btn-primary btn-sm mb-1">Edit</a>
+                            <a asp-action="Details" asp-controller="Mensaje" asp-route-id="@item.MensajeId" class="btn btn-info btn-sm mb-1">Details</a>
+                            <a asp-action="Delete" asp-controller="Mensaje" asp-route-id="@item.MensajeId" class="btn btn-danger btn-sm mb-1">Delete</a>
+                            </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@* @section Styles {
+    <style>
+        .card {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .card-body {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+    </style>
+}
+ *@

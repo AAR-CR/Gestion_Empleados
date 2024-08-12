@@ -1,0 +1,52 @@
+﻿@model Gestion_Empleados.Models.Jornada
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" class="bloque mx-auto">
+    <div class="form-horizontal">
+        <h2 class="text-center bloque text-primary fw-bold">Crear Jornada</h2>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Nombre" class="col-sm-4 col-form-label text-white text-right">Nombre</label>
+            <div class="col-sm-7">
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="HoraInicio" class="col-sm-4 col-form-label text-white text-right">Inicio</label>
+            <div class="col-sm-7">
+                <input asp-for="HoraInicio" class="form-control" type="time" />
+                <span asp-validation-for="HoraInicio" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="HoraFin" class="col-sm-4 col-form-label text-white text-right">Fin</label>
+            <div class="col-sm-7">
+                <input asp-for="HoraFin" class="form-control" type="time" />
+                <span asp-validation-for="HoraFin" class="text-danger"></span>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group row">
+            <div class="col-sm-12 text-center">
+                <a asp-action="Index" class="btn btn-dark">Cancelar</a>
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

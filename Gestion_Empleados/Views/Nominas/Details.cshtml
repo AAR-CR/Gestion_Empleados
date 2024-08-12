@@ -1,0 +1,48 @@
+﻿@model Gestion_Empleados.Models.Nomina
+
+@{
+    ViewData["Title"] = "Detalles de la Nómina";
+}
+
+<div class="container bloque mx-auto">
+    <h1 class="text-center text-primary fw-bold">Detalles de la Nómina</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Salario)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Salario)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Deducciones)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Deducciones)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Bonos)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Bonos)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.DiaDePago)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.DiaDePago)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Empleado.Apellidos)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Empleado.Apellidos)
+        </dd>
+    </dl>
+
+    <hr />
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.NominaId" class="btn btn-primary mx-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary mx-2">Volver a la Lista</a>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Gestion_Empleados.Models.Nomina>
+
+@{
+    ViewData["Title"] = "Nóminas";
+}
+
+<div class="container bloque mx-auto">
+    <h1 class="text-center text-primary fw-bold">Nóminas</h1>
+
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-primary">Crear Nueva Nómina</a>
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm small-table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Salario)</th>
+                    <th>@Html.DisplayNameFor(model => model.Deducciones)</th>
+                    <th>@Html.DisplayNameFor(model => model.Bonos)</th>
+                    <th>@Html.DisplayNameFor(model => model.DiaDePago)</th>
+                    <th>@Html.DisplayNameFor(model => model.Empleado.Apellidos)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Salario)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Deducciones)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Bonos)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DiaDePago)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Empleado.Apellidos)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.NominaId" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.NominaId" class="btn btn-info btn-sm">Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.NominaId" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

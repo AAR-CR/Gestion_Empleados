@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Gestion_Empleados</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Gestion_Empleados.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-transparent border-bottom box-shadow mb-3 shadow-sm">
+            <div class="container-fluid d-flex flex-column">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-column" id="sidebar">
+                    <ul class="navbar-nav flex-column flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Home" asp-action="Index">INICIO</a>
+                        </li>
+                        <hr />
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" href="#">Jornadas</a>
+                            <ul class="nav flex-column sub-menu">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Jornada" asp-action="Create">Crear</a></li>
+                                }
+                                
+                                <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Jornada" asp-action="Index">Listado</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" href="#">Empleados</a>
+                            <ul class="nav flex-column sub-menu">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Empleadoes" asp-action="Create">Registrar</a></li>
+                                }
+                                
+                                <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Empleadoes" asp-action="Index">Listado</a></li>
+                                <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Empleadoes" asp-action="JornadasChart">Grafico</a></li>
+                            </ul>
+                        </li>
+                        <hr/>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" href="#">Turnos</a>
+                            <ul class="nav flex-column sub-menu">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                     <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Turnoes" asp-action="Create">Registrar</a></li>
+                                }
+                               
+                                <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Turnoes" asp-action="Index">Listado</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-bold" href="#">Nominas</a>
+                            <ul class="nav flex-column sub-menu">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                     <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Nominas" asp-action="Create">Registrar</a></li>
+                                }
+                               
+                                <li class="nav-item"><a class="nav-link text-black" asp-area="" asp-controller="Nominas" asp-action="Index">Listado</a></li>
+                            </ul>
+                        </li>
+                        <hr />
+                        <li class="nav-item mt-auto">
+                            <a class="btn btn-primary btn-block mb-2" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                            <a class="btn btn-secondary btn-block mb-2" asp-area="" asp-controller="Home" asp-action="Salir">Logout</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item bloque">
+                                <span class="nav-link text-primary"> @User.Identity.Name</span>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-black " asp-area="" asp-controller="Mensaje" asp-action="Create">Mensaje General</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" asp-area="" asp-controller="Correo" asp-action="Create">Enviar Correo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black " asp-area="" asp-controller="Correo" asp-action="Index">Recibidos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" asp-area="" asp-controller="EvaluacionDesempenoes" asp-action="Create">Evaluar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black" asp-area="" asp-controller="EvaluacionDesempenoes" asp-action="Index">Evaluaciones</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <div class="container">
+        <main role="main" class="container-fluid">
+            @RenderBody()
+        </main>
+    </div>
+
+@*     <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Gestion_Empleados - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model Gestion_Empleados.Models.Turno
+
+@{
+    ViewData["Title"] = "Detalles del Turno";
+}
+
+<div class="container bloque mx-auto">
+    <h1 class="text-center text-primary fw-bold">Detalles del Turno</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Inicio)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Inicio)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Final)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Final)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Empleado.Apellidos)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Empleado.Apellidos)
+        </dd>
+    </dl>
+    <hr />
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.TurnoId" class="btn btn-primary mx-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary mx-2">Volver a la Lista</a>
+    </div>
+</div>

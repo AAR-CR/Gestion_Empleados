@@ -1,0 +1,107 @@
+﻿@model Gestion_Empleados.Models.Empleado
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" class="bloque mx-auto">
+    <div class="form-horizontal">
+        <h1 class="text-center  text-primary">Crear Empleado</h1>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Nombre" class="col-sm-4 col-form-label text-white text-right">Nombre</label>
+            <div class="col-sm-7">
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Apellidos" class="col-sm-4 col-form-label text-white text-right">Apellidos</label>
+            <div class="col-sm-7">
+                <input asp-for="Apellidos" class="form-control" />
+                <span asp-validation-for="Apellidos" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Direccion" class="col-sm-4 col-form-label text-white text-right">Dirección</label>
+            <div class="col-sm-7">
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Telefono" class="col-sm-4 col-form-label text-white text-right">Teléfono</label>
+            <div class="col-sm-7">
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Correo" class="col-sm-4 col-form-label text-white text-right">Correo</label>
+            <div class="col-sm-7">
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="FechaNacimiento" class="col-sm-4 col-form-label text-white text-right">Nacimiento</label>
+            <div class="col-sm-7">
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Puesto" class="col-sm-4 col-form-label text-white text-right">Puesto</label>
+            <div class="col-sm-7">
+                <input asp-for="Puesto" class="form-control" />
+                <span asp-validation-for="Puesto" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="FechaContratacion" class="col-sm-4 col-form-label text-white text-right">Contratación</label>
+            <div class="col-sm-7">
+                <input asp-for="FechaContratacion" class="form-control" />
+                <span asp-validation-for="FechaContratacion" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="Rol" class="col-sm-4 col-form-label text-white text-right">Rol</label>
+            <div class="col-sm-7">
+                <select asp-for="Rol" class="form-control" asp-items="Html.GetEnumSelectList<Gestion_Empleados.Models.RolUsuario>()"></select>
+                <span asp-validation-for="Rol" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row justify-content-center">
+            <label asp-for="JornadaId" class="col-sm-4 col-form-label text-white text-right">Jornada</label>
+            <div class="col-sm-7">
+                <select asp-for="JornadaId" class="form-control" asp-items="ViewBag.JornadaId"></select>
+                <span asp-validation-for="JornadaId" class="text-danger"></span>
+            </div>
+        </div>
+        <hr />
+
+        <div class="form-group row">
+            <div class="col-sm-12 text-center">
+                <a asp-action="Index" class="btn btn-dark">Cancelar</a>
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

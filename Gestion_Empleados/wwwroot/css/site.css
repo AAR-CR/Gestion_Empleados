@@ -1,0 +1,210 @@
+html {
+    font-size: 14px;
+    height: 100%;
+
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: transparent;
+    background-image: url('../imagenes/fondo3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    min-height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1) !important;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.navbar-brand {
+    padding-top: 1rem;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.nav-item {
+    align-self: flex-start;
+}
+
+    .nav-item .nav-link {
+        font-weight: bold;
+    }
+
+.sub-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.nav-item:hover .sub-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    margin-left: 250px; /* Espacio para el navbar */
+    padding: 20px;
+    height:100%;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.thead-dark th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.5); /* Blanco-transparente */
+}
+
+.table th, .table td {
+    padding: 1.5rem;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+/*.container {
+    max-width: 80%;*/ /* Ajusta el ancho máximo del contenedor */
+/*}*/
+
+.table-responsive {
+    max-height: auto; 
+    overflow-y: auto; 
+}
+
+.bloque {
+    max-width: 600px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-warning {
+    font-size: 1.2em;
+}
+
+.text-primary {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.text-white {
+    font-size: 1em;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+textarea.form-control {
+    resize: vertical; 
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.card {
+    font-size: 0.875rem; /* Tamaño de letra más pequeño */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.card-header {
+    background-color: rgba(0, 123, 255, 0.6); /* Fondo azul con transparencia */
+    color: white; /* Color de texto blanco */
+    border-top-left-radius: 10px; /* Redondear esquinas superiores */
+    border-top-right-radius: 10px; /* Redondear esquinas superiores */
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea divisoria suave */
+}
+
+.small-table {
+    font-size: 0.8rem; /* Tamaño de letra más pequeño para la tabla */
+}
+
+.table-sm th, .table-sm td {
+    padding: 0.3rem; /* Reducir padding en las celdas de la tabla */
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}

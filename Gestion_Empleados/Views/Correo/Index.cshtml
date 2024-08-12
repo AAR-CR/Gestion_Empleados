@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Gestion_Empleados.Models.Correo>
+
+@{
+    ViewData["Title"] = "Correos";
+}
+
+<h1 class="text-center text-primary fw-bold">Correos</h1>
+
+<p class="text-center">
+    <a asp-action="Create" class="btn btn-success mb-3">Crear Nuevo</a>
+</p>
+
+<div class="container bloque mx-auto">
+    <table class="table table-striped small-table table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Remitente)</th>
+                <th>@Html.DisplayNameFor(model => model.Destinatario)</th>
+                <th>@Html.DisplayNameFor(model => model.Asunto)</th>
+                <th>@Html.DisplayNameFor(model => model.Texto)</th>
+                <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Remitente.Apellidos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Destinatario.Apellidos)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Asunto)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Texto)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CorreoId" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.CorreoId" class="btn btn-info btn-sm">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.CorreoId" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

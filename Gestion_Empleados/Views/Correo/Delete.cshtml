@@ -1,0 +1,54 @@
+﻿@model Gestion_Empleados.Models.Correo
+
+@{
+    ViewData["Title"] = "Eliminar Correo";
+}
+
+<h1 class="text-center text-primary fw-bold">Eliminar Correo</h1>
+
+<div class="container bloque mx-auto">
+    <h3 class="text-center text-white">¿Estás seguro de que quieres eliminar este correo?</h3>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Remitente)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Remitente.Apellidos)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Destinatario)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Destinatario.Apellidos)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Asunto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Asunto)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" class="text-center mt-4">
+        <input type="hidden" asp-for="CorreoId" />
+        <input type="submit" value="Eliminar" class="btn btn-danger mx-2" />
+        <a asp-action="Index" class="btn btn-secondary mx-2">Volver a la Lista</a>
+    </form>
+</div>

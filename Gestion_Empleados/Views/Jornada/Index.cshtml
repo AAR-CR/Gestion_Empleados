@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Gestion_Empleados.Models.Jornada>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class=" bloque text-center mb-4">
+    <h1 class="text-center text-primary fw-bold">Jornadas</h1>
+    <a asp-action="Create" class="btn btn-primary">Crear Nueva Jornada</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </h5>
+                        <p class="card-text">
+                            <strong>Hora de Inicio:</strong> @Html.DisplayFor(modelItem => item.HoraInicio)
+                        </p>
+                        <p class="card-text">
+                            <strong>Hora de Fin:</strong> @Html.DisplayFor(modelItem => item.HoraFin)
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@item.JornadaId" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@item.JornadaId" class="btn btn-danger btn-sm">Eliminar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

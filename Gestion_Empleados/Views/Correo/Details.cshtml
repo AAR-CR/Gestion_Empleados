@@ -1,0 +1,51 @@
+﻿@model Gestion_Empleados.Models.Correo
+
+@{
+    ViewData["Title"] = "Detalles del Correo";
+}
+
+<h1 class="text-center text-primary fw-bold">Detalles del Correo</h1>
+
+<div class="container bloque mx-auto">
+    <dl class="row">
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Remitente)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Remitente.Apellidos)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Destinatario)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Destinatario.Apellidos)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Asunto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Asunto)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+        <dt class="col-sm-4 text-warning text-right">
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+        <dd class="col-sm-8 text-white">
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+    </dl>
+
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.CorreoId" class="btn btn-primary mx-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary mx-2">Volver a la Lista</a>
+    </div>
+</div>

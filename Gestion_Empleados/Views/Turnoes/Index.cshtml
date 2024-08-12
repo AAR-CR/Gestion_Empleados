@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Gestion_Empleados.Models.Turno>
+
+@{
+    ViewData["Title"] = "Turnos";
+}
+
+<div class="container bloque mx-auto">
+    <h1 class="text-center text-primary fw-bold">Lista de Turnos</h1>
+
+    <div class="text-right mb-3">
+        <a asp-action="Create" class="btn btn-success">Crear Nuevo Turno</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped small-table table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inicio)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Final)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Empleado.Apellidos)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Inicio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Final)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Empleado.Apellidos)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.TurnoId" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="Details" asp-route-id="@item.TurnoId" class="btn btn-info btn-sm">Detalles</a>
+                            <a asp-action="Delete" asp-route-id="@item.TurnoId" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

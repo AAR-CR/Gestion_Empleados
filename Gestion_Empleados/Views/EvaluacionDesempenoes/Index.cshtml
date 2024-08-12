@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Gestion_Empleados.Models.EvaluacionDesempeno>
+
+@{
+    ViewData["Title"] = "Evaluaciones de Desempeño";
+}
+
+<h1 class="text-center text-white">Evaluaciones de Desempeño</h1>
+
+<div class="container">
+    <p class="text-center">
+        <a asp-action="Create" class="btn btn-success">Crear Nueva Evaluación</a>
+    </p>
+
+    <table class="table table-striped table-responsive small-table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaEvaluacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Objetivos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Retroalimentacion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaEvaluacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Objetivos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Retroalimentacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleado.Apellidos)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EvaluacionDesempenoId" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.EvaluacionDesempenoId" class="btn btn-info btn-sm">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.EvaluacionDesempenoId" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
